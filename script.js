@@ -1,14 +1,18 @@
-// Create a student object with a name property
+// Create an object called student
 const student = {
-    name: "John Doe",
-    age: 20,
-    city: "New York"
+    name: "Alice"
 };
 
-// Add getKeys() method to the Object prototype
+// Add a method to Object prototype
 Object.prototype.getKeys = function () {
     return Object.keys(this);
 };
 
-// Example usage (this will be called and logged to the console)
-console.log(student.getKeys()); // Logs: ["name", "age", "city"]
+// Test the getKeys method
+console.log("Keys in the student object:", student.getKeys()); // Output: ["name"]
+
+// Log additional output after DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const result = student.getKeys();
+    console.log("getKeys() Output after DOM load:", result); // Output: ["name"]
+});
